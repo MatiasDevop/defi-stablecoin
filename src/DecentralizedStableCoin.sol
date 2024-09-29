@@ -39,7 +39,6 @@ import {Ownable} from "@openzeppelin/contracts/access/Ownable.sol";
  * implementation of our stablecoin system.
  *
  */
-
 contract DecentralizedStableCoin is ERC20Burnable, Ownable {
     error DecentralizedStableCoin__MustBeMoreThanZero();
     error DecentralizedStableCoin__BurnAmountExceedsBalance();
@@ -58,7 +57,7 @@ contract DecentralizedStableCoin is ERC20Burnable, Ownable {
         super.burn(_amount);
     }
 
-    function mint(address _to, uint256 _amount) external onlyOwner returns(bool) {
+    function mint(address _to, uint256 _amount) external onlyOwner returns (bool) {
         if (_to == address(0)) {
             revert DecentralizedStableCoin_NotZeroAddress();
         }
